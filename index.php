@@ -190,7 +190,7 @@ if(isset($_SESSION['arrayResult']) && isset($_POST['resultatPost'])){
                     if(isset($_POST['resultat'])){
                         $resultat = $_POST['resultat'];
                         $resultValid = $randomNumber * $numberRadio;
-                        if($resultValid == $resultat){
+                        if($resultat !== '' && $resultValid == $resultat){
                             echo '<p>Bien jouer, la réponse étais bien : ' . htmlspecialchars($resultat) . '</p>';
                         }
                         else{
@@ -198,7 +198,6 @@ if(isset($_SESSION['arrayResult']) && isset($_POST['resultatPost'])){
                         }
                     }
                 }
-                // Bis Version -----------------!
                 ?>
             </div>
             <?php
@@ -262,13 +261,10 @@ if(isset($_SESSION['arrayResult']) && isset($_POST['resultatPost'])){
                         <?php
                     }
                     $_SESSION['arrayResult'] = $array;
-                    var_dump($_SESSION['arrayResult']);
 
                     ?>
                     <input type="submit" value="Valider">
                 </form> 
-                <div id="test">
-                </div>
                 <?php
             ?>
             </div>
